@@ -1,10 +1,8 @@
 import Header from "./components/Header";
 
-
 function App() {
-  return (
-    <><Header/></>
-  )
+  const isLogin = true;
+  return <><Header isLogin={isLogin}/></>;
 }
 
-export default App
+export default App;
