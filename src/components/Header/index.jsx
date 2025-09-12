@@ -1,21 +1,23 @@
 import userIcon from './logoUser.jpg'
 import logo from './vite.svg'
+import styles from './Header.module.css'
+
 
 function Header(props) {
     const {isLogin} = props;
 
     return (
-        <div>
-            <img src={logo} alt="logo" />
+        <header className={styles.container}>
+            <img className={styles.logo} src={logo} alt="logo" />
             {isLogin ? (
-                <img src={userIcon} alt="user" />
+                <img className={styles.userImg} src={userIcon} alt="user" />
             ) : (
                 <div>
                     <button>Login</button>
                     <button>Register</button>
                 </div>
             )}
-        </div>
+        </header>
     );
 }
 

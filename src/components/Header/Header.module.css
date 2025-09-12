@@ -1,0 +1,25 @@
+/*---------------Общие стили----------------*/
+* {
+  box-sizing: border-box;
+}
+
+/*------------------------------------------*/
+
+.container {
+    background-color: bisque;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo, 
+.userImg {
+    width: 70px;
+    height: 85px;
+    object-fit: cover;
+}
+
+.userImg {
+    border-radius: 40%;
+}
