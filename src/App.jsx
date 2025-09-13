@@ -1,12 +1,7 @@
-import Header from "./components/Header";
+import Counter from './components/counter/index'
 
 function App() {
-  const isLogin = true;
-  return (
-    <>
-      <Header isLogin={isLogin} />
-    </>
-  );
+  return <Counter/>
 }
 
 export default App;

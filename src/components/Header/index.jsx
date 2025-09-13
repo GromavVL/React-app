@@ -2,6 +2,17 @@ import userIcon from './logoUser.jpg'
 import logo from './vite.svg'
 import styles from './Header.module.css'
 
+function App() {
+  const isLogin = true;
+  return (
+    <>
+      <Header isLogin={isLogin} />
+    </>
+  );
+}
+
+// export default App;
+
 
 function Header(props) {
     const {isLogin} = props;
