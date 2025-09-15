@@ -1,4 +1,5 @@
 import StopWatch from "./components/StopWatch";
+import AnimalSlider from './components/AnimalSlider/index'
 import React, { Component } from "react";
 
 class App extends Component {
@@ -13,13 +14,9 @@ class App extends Component {
     this.setState({ isVisible: !isVisible });
   };
   render() {
-    const { isVisible } = this.state;
     return (
       <>
-        <button onClick={this.handlerClick}>
-          {isVisible ? "Unmount" : "Mount"}
-        </button>
-        {isVisible && <StopWatch />}
+        <AnimalSlider />
       </>
     );
   }
