@@ -1,19 +1,56 @@
 import React, { Component } from "react";
 
-export default class StopWatch extends Component {
+class StopWatch extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
-    this.state = { count: 0 };
+
+    this.state = {
+      count: new Date(0, 0, 0, 0, 0, 0, 0),
+    };
+    this.id = null;
   }
-  pomponentDidMount() {}
+
+  componentDidMount() {
+    this.start();
+  }
+  componentDidUpdate() {}
+  componentWillUnmount() {
+    this.stop(0);
+  }
+
+  tick = () => {
+    const { count } = this.state;
+    const newCount = new Date(0, 0, 0);
+    newCount.setMinutes(count.getMinutes());
+    newCount.setHours(count.getHours());
+    console.log('tick');
+    newCount.setSeconds(count.getSeconds() + 1);
+    this.setState({ count: newCount });
+  };
+  start = () => {
+    if (!this.id) {
+      this.id = setInterval(this.tick, 1000);
+    }
+  };
+  stop = () => {
+    clearInterval(this.id);
+    this.id = null;
+  };
+  reset = () => {
+    this.setState({count: new Date(0, 0, 0)})
+  };
+
   render() {
     const { count } = this.state;
     return (
-      <>
-        <div>{count}</div>
-        <button onClick={() => this.setState({count: count + 1})}>+</button>
-      </>
+      <article>
+        <div>{count.toLocaleTimeString("en-GB")}</div>
+        <button onClick={this.start}>Start</button>
+        <button onClick={this.stop}>Stop</button>
+        <button onClick={this.reset}>Reset</button>
+      </article>
     );
   }
 }
+
+export default StopWatch;
