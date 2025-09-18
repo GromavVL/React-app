@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import LoginForm from "./components/LoginForm";
+import UsersLoader from './components/UsersLoader/index'
 
 function App() {
-  return <LoginForm/>
+  return <UsersLoader/>
 }
 
 export default App;
