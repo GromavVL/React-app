@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import UsersLoader from './components/UsersLoader/index'
+import UsersLoader from './components/UsersLoader/index';
+import AnimalSlider from './components/AnimalSlider';
+
 
 function App() {
-  return <UsersLoader/>
+  return <AnimalSlider/>
 }
 
 export default App;

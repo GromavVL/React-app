@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import defaultImf from "./dog.png";
-import styles from "./AnimalSlider.module.css";
+import styles from "./AnimalSlider.module.scss";
 
 class AnimalSlider extends Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class AnimalSlider extends Component {
     this.imgRender();
   }
   componentDidUpdate() {
-    this.id = setInterval(this.imgRender(), 2000);
+    this.id = setInterval(this.imgRender(), 5000);
   }
   componentWillUnmount() {
     clearInterval(this.id);
