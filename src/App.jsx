@@ -1,10 +1,14 @@
-import React, { Component } from "react";
-import UsersLoader from './components/UsersLoader/index';
-import AnimalSlider from './components/AnimalSlider';
-
+import ImageWrapper from "./components/ImageWrapper";
 
 function App() {
-  return <AnimalSlider/>
+  return (
+    <ImageWrapper width='400px' height='300px'>
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREJt-Ypis4MPX-k8Bo18on3yV-SLhUE6ho4w&s"
+        alt="home"
+      />
+    </ImageWrapper>
+  );
 }
 
 export default App;
