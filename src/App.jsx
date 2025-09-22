@@ -1,14 +1,31 @@
-import ImageWrapper from "./components/ImageWrapper";
+import { createContext } from "react";
+
+const DataContext = createContext();
 
 function App() {
+  const data = "data";
+  
   return (
-    <ImageWrapper width='400px' height='300px'>
-      <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREJt-Ypis4MPX-k8Bo18on3yV-SLhUE6ho4w&s"
-        alt="home"
-      />
-    </ImageWrapper>
+    <DataContext.Provider value={data}>
+      <ChildChild data={data} />
+    </DataContext.Provider>
   );
 }
 
 export default App;
+
+function Child() {
+  return (
+    <div>
+      <ChildChild />
+    </div>
+  );
+}
+
+function ChildChild() {
+  return (
+    <DataContext.Consumer>
+      {(data) => <div>I am ChildChild: {data}</div>}
+    </DataContext.Consumer>
+  );
+}
