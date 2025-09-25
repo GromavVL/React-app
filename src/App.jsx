@@ -1,8 +1,9 @@
-import CounterH from './components/CounterH';
+// import CounterH from './components/CounterH';
+import ClickerCounter from "./components/ClickerCounter";
 
 function App() {
   return (
-    <CounterH/>
+    <ClickerCounter/>
   );
 }
 
