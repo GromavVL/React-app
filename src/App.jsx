@@ -1,9 +1,12 @@
-// import CounterH from './components/CounterH';
-import ClickerCounter from "./components/ClickerCounter";
+import StopWatch from "./components/StopWatch";
+import StopWatchH from "./components/StopWatchH";
 
 function App() {
   return (
-    <ClickerCounter/>
+    <>
+      <StopWatch />
+      <StopWatchH/>
+    </>
   );
 }
 
