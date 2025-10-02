@@ -1,11 +1,11 @@
-import StopWatch from "./components/StopWatch";
-import StopWatchH from "./components/StopWatchH";
+import UsersLoader from './components/UsersLoader'
+import UsersLoaderH from "./components/UsersLoaderH";
 
 function App() {
   return (
     <>
-      <StopWatch />
-      <StopWatchH/>
+      {/* <UsersLoader/> */}
+      <UsersLoaderH/>
     </>
   );
 }
