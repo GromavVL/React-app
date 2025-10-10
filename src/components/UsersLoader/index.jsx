@@ -8,7 +8,7 @@ class UsersLoader extends Component {
       users: [],
       isFetching: false,
       error: null,
-      currentPage: 1,
+      currentPage: 3,
     };
   }
   loadUsers = () => {
