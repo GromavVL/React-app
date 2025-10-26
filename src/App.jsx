@@ -1,8 +1,10 @@
 import React from "react";
+import Practice from "./components/Practice";
+
 
 function App() {
   return (
-    <div>Hello</div>
+    <Practice />
   );
 }
 
