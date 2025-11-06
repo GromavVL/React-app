@@ -2,7 +2,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import CONTACT_FORM_VALIDATION_SCHEMA from "../../utils/validates/index.js";
 import styles from "./ContactForm.module.scss";
 import React from "react";
-import classNames from "classnames/bind";
+import Input from "./input/index.jsx";
 
 function ContactForm() {
   const initialValues = {
@@ -15,6 +15,13 @@ function ContactForm() {
     console.log("Submitted form with values :>> ", values);
     formikBag.resetForm();
   };
+
+  const classes = {
+    error: styles.error,
+    input: styles.input,
+    valid: styles.valid,
+    invalid: styles.invalid,
+  };
   return (
     <Formik
       initialValues={initialValues}
@@ -22,65 +29,36 @@ function ContactForm() {
       validationSchema={CONTACT_FORM_VALIDATION_SCHEMA}
     >
       {(formikProps) => {
-        const nameClassNames = classNames(styles.input, {
-          [styles.valid]: !formikProps.errors.name && formikProps.touched.name,
-          [styles.invalid]: formikProps.errors.name && formikProps.touched.name,
-        });
-        const phoneClassNames = classNames(styles.input, {
-          [styles.valid]:
-            !formikProps.errors.phone && formikProps.touched.phone,
-          [styles.invalid]:
-            formikProps.errors.phone && formikProps.touched.phone,
-        });
         return (
           <Form className={styles.form}>
-            <label className={styles.label}>
-              <span>Name: </span>
-              <Field
-                className={nameClassNames}
-                type="text"
-                name="name"
-                placeholder="Enter your name"
-                autoFocus
-              />
-              <ErrorMessage
-                className={styles.error}
-                name="name"
-                component={"span"}
-              />
-            </label>
-            <label>
-              <span>Phone: </span>
-              <Field
-                className={phoneClassNames}
-                type="number"
-                name="phone"
-                placeholder="+380xxx xxx xx xx"
-              />
-              <ErrorMessage
-                className={styles.error}
-                name="phone"
-                component={"span"}
-              />
-            </label>
-            <label>
-              <span>Email: </span>
-              <Field type="email" name="email" placeholder="your@gmail.com" />
-              <ErrorMessage
-                className={styles.error}
-                name="email"
-                component={"span"}
-              />
-            </label>
-            <label>
-              <span>Birthdate: </span>
-              <Field type="date" name="birthdate" />
-              <ErrorMessage
-                className={styles.error}
-                name="birthdate"
-                component={"span"}
-              />
-            </label>
+            <Input
+              label="Name:"
+              type="text"
+              name="name"
+              placeholder="Yourname"
+              autoFocus
+              classes={classes}
+            />
+            <Input
+              label="Phone Number:"
+              type="tel"
+              name="phone"
+              placeholder="+380111111111"
+              classes={classes}
+            />
+            <Input
+              label="Email:"
+              type="email"
+              name="email"
+              placeholder="your@mail.com"
+              classes={classes}
+            />
+            <Input
+              label="Birthday:"
+              type="date"
+              name="birthday"
+              classes={classes}
+            />
             <button type="submit">Save</button>
           </Form>
         );
