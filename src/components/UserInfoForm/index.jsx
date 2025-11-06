@@ -1,10 +1,6 @@
-import { Formik } from "formik";
+import { Field, Formik, Form, ErrorMessage } from "formik";
 import React from "react";
-import * as yup from "yup";
-
-const USER_VALIDATION_SCHEMA = yup.object({
-  firstName: yup.string().trim().min(2).max(64).required(),
-});
+import { USER_VALIDATION_SCHEMA } from "../../utils/validates/index";
 
 function UserInfoForm() {
   const userInitialValues = { firstName: "" };
@@ -18,20 +14,24 @@ function UserInfoForm() {
       onSubmit={handleSubmit}
     >
       {(formikProps) => {
-      console.log('formikProps :>> ', formikProps);
         return (
-          <form onSubmit={formikProps.handleSubmit}>
-            <input
-              type="text"
-              value={formikProps.values.firstName}
-              onChange={formikProps.handleChange}
-              name="firstName"
-              placeholder="Name"
-              autoFocus
-            />
+          <Form>
+            <label>
+              <span>Name:</span>
+              <Field
+                type="text"
+                name="firstName"
+                placeholder="Name"
+                autoFocus
+              />
+              <ErrorMessage name="firstName" component={"div"} />
+            </label>
+
             <button type="submit">Save</button>
-            <button type="reset" disabled={!formikProps.dirty}>Cancel</button>
-          </form>
+            <button type="reset" disabled={!formikProps.dirty}>
+              Cancel
+            </button>
+          </Form>
         );
       }}
     </Formik>
