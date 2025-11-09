@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import styles from './ImageWrapper.module.scss';
 
-function ImageWrapper({ width, height, children }) {
+function ImageWrapper ({ width, height, children }) {
   const wrapperDims = {
     width: width,
     height: height,
@@ -20,4 +20,4 @@ ImageWrapper.propTypes = {
   height: PropTypes.string,
 };
 
-export default ImageWrapper
+export default ImageWrapper;

@@ -1,23 +1,23 @@
-import React, { Component } from "react";
-import UserListItem from "./UserListItem";
+import React, { Component } from 'react';
+import UserListItem from './UserListItem';
 
 const usersData = [
-  { id: 1, firstName: "Test", lastName: "Testovich" },
-  { id: 2, firstName: "John", lastName: "Dou" },
-  { id: 3, firstName: "Jane", lastName: "Dou" },
+  { id: 1, firstName: 'Test', lastName: 'Testovich' },
+  { id: 2, firstName: 'John', lastName: 'Dou' },
+  { id: 3, firstName: 'Jane', lastName: 'Dou' },
 ];
 
 class UsersList extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.state = {
-      users: usersData.map((u) => ({ ...u, isSelected: false })),
+      users: usersData.map(u => ({ ...u, isSelected: false })),
     };
   }
-  selectUser = (id) => {
+  selectUser = id => {
     const { users } = this.state;
-    const foundIndex = users.findIndex((u) => u.id === id);
+    const foundIndex = users.findIndex(u => u.id === id);
 
     const newUser = [...users];
     newUser[foundIndex] = {
@@ -26,7 +26,7 @@ class UsersList extends Component {
     };
     this.setState({ users: newUser });
   };
-  mapUser = (u) => {
+  mapUser = u => {
     return (
       <UserListItem
         key={u.id}
@@ -36,7 +36,7 @@ class UsersList extends Component {
       />
     );
   };
-  render() {
+  render () {
     const { users } = this.state;
     return <ul>{users.map(this.mapUser)}</ul>;
   }

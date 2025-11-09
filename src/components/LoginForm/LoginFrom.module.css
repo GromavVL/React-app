@@ -1,44 +1,41 @@
-
-
 .formConteiner {
-    margin: 10px auto;
-    padding: 20px;
-    box-shadow: 0 0 5px gray;
-    max-width: 800px;
-    min-width: 350px;
-    width: 100%;
+  margin: 10px auto;
+  padding: 20px;
+  box-shadow: 0 0 5px gray;
+  max-width: 800px;
+  min-width: 350px;
+  width: 100%;
 }
 
 .formHeaders {
-    text-align: center;
+  text-align: center;
 }
 
 .loginForm {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .label {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .inputName {
-    padding: 5px;
+  padding: 5px;
 }
 
 .inputValid {
-    border: 2px solid greenyellow;
+  border: 2px solid greenyellow;
 }
 
 .input {
-    padding: 10px;
-    outline: none;
+  padding: 10px;
+  outline: none;
 }
 
 .inputInvalid {
-    border: 2px solid red;
+  border: 2px solid red;
 }

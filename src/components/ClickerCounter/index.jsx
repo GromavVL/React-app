@@ -1,10 +1,10 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from 'react';
 
-function ClickerCounter() {
+function ClickerCounter () {
   const [clickCount, setClickCount] = useState(0);
 
   const hendlerClick = () => {
-    setClickCount(clickCount => clickCount + 1)
+    setClickCount(clickCount => clickCount + 1);
   };
 
   useEffect(() => {
@@ -14,9 +14,9 @@ function ClickerCounter() {
   useEffect(() => {
     document.body.addEventListener('click', hendlerClick);
     return () => {
-        document.body.removeEventListener('click', hendlerClick)
+      document.body.removeEventListener('click', hendlerClick);
     };
-  }, [])
+  }, []);
   return <div>{clickCount}</div>;
 }
 

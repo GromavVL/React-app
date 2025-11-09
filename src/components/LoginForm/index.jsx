@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import classNames from "classnames";
-import styles from "./LoginFrom.module.css";
+import React, { Component } from 'react';
+import classNames from 'classnames';
+import styles from './LoginFrom.module.css';
 
 const LOGINFORM_REX_EXP = {
   email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
   password: /^(?=.*[A-Z].*)(?=.*[a-z].*)(?=.*\d.*)(?=.*[!@#$%^&*.].*).{8,20}$/,
 };
-const INITIAL_VALUES = { email: "", password: "" };
+const INITIAL_VALUES = { email: '', password: '' };
 class LoginForm extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.state = {
@@ -31,11 +31,11 @@ class LoginForm extends Component {
       isPasswordValid: LOGINFORM_REX_EXP.password.test(value),
     });
   };
-  handlerSubmit = (e) => {
+  handlerSubmit = e => {
     e.preventDefault();
     this.setState(INITIAL_VALUES);
   };
-  render() {
+  render () {
     const { email, password, isEmailValid, isPasswordValid } = this.state;
 
     const emailClassName = classNames(styles.input, {
@@ -54,9 +54,9 @@ class LoginForm extends Component {
           <label className={styles.label}>
             <span className={styles.inputName}>Email</span>
             <input
-              type="email"
-              placeholder="YourEmail"
-              name="email"
+              type='email'
+              placeholder='YourEmail'
+              name='email'
               className={emailClassName}
               value={email}
               onChange={this.handlerEmailChange}
@@ -66,15 +66,15 @@ class LoginForm extends Component {
           <label className={styles.label}>
             <span className={styles.inputName}>Password</span>
             <input
-              type="password"
-              name="password"
+              type='password'
+              name='password'
               className={styles.input}
               value={password}
               onChange={this.handlerPasswordChange}
               autoFocus
             />
           </label>
-          <button type="submit">Login</button>
+          <button type='submit'>Login</button>
         </form>
       </main>
     );

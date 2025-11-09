@@ -1,6 +1,6 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from 'react';
 
-function UsersLoaderH() {
+function UsersLoaderH () {
   const [users, setUsers] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
   const [error, setError] = useState(null);
@@ -9,10 +9,10 @@ function UsersLoaderH() {
   const loadUsers = () => {
     setIsFetching(true);
     fetch(`https://randomuser.me/api?results=5&seed=pe2024&page=${currentPage}`)
-      .then((response) => response.json())
-      .then((data) => setUsers(data.results))
-      .catch((e) => setError(e))
-      .finally(() => setIsFetching(false))
+      .then(response => response.json())
+      .then(data => setUsers(data.results))
+      .catch(e => setError(e))
+      .finally(() => setIsFetching(false));
   };
 
   const prevPage = () => {
@@ -21,20 +21,20 @@ function UsersLoaderH() {
     }
   };
   const nextPage = () => {
-    setCurrentPage(currentPage => currentPage + 1 );
+    setCurrentPage(currentPage => currentPage + 1);
   };
   useEffect(() => {
     loadUsers();
   }, [currentPage]);
   return (
     <>
-      <button onClick={prevPage}>{"<"}</button>
-      <button onClick={nextPage}>{">"}</button>
+      <button onClick={prevPage}>{'<'}</button>
+      <button onClick={nextPage}>{'>'}</button>
       {error && <div>!!!ERROR!!!</div>}
       {isFetching && <div>Loading. Please waite...</div>}
       {!error && !isFetching && (
         <ul>
-          {users.map((u) => (
+          {users.map(u => (
             <li key={u.id}>{JSON.stringify(u)}</li>
           ))}
         </ul>

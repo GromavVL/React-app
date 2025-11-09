@@ -6,20 +6,20 @@
 /*------------------------------------------*/
 
 .container {
-    background-color: bisque;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  background-color: bisque;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.logo, 
+.logo,
 .userImg {
-    width: 70px;
-    height: 85px;
-    object-fit: cover;
+  width: 70px;
+  height: 85px;
+  object-fit: cover;
 }
 
 .userImg {
-    border-radius: 40%;
+  border-radius: 40%;
 }

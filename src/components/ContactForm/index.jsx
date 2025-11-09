@@ -1,18 +1,18 @@
-import { ErrorMessage, Field, Form, Formik } from "formik";
-import CONTACT_FORM_VALIDATION_SCHEMA from "../../utils/validates/index.js";
-import styles from "./ContactForm.module.scss";
-import React from "react";
-import Input from "./input/index.jsx";
+import { ErrorMessage, Field, Form, Formik } from 'formik';
+import CONTACT_FORM_VALIDATION_SCHEMA from '../../utils/validates/index.js';
+import styles from './ContactForm.module.scss';
+import React from 'react';
+import Input from './input/index.jsx';
 
-function ContactForm() {
+function ContactForm () {
   const initialValues = {
-    name: "",
-    phone: "",
-    email: "",
-    birthdate: "",
+    name: '',
+    phone: '',
+    email: '',
+    birthdate: '',
   };
   const handleSubmit = (values, formikBag) => {
-    console.log("Submitted form with values :>> ", values);
+    console.log('Submitted form with values :>> ', values);
     formikBag.resetForm();
   };
 
@@ -28,38 +28,38 @@ function ContactForm() {
       onSubmit={handleSubmit}
       validationSchema={CONTACT_FORM_VALIDATION_SCHEMA}
     >
-      {(formikProps) => {
+      {formikProps => {
         return (
           <Form className={styles.form}>
             <Input
-              label="Name:"
-              type="text"
-              name="name"
-              placeholder="Yourname"
+              label='Name:'
+              type='text'
+              name='name'
+              placeholder='Yourname'
               autoFocus
               classes={classes}
             />
             <Input
-              label="Phone Number:"
-              type="tel"
-              name="phone"
-              placeholder="+380111111111"
+              label='Phone Number:'
+              type='tel'
+              name='phone'
+              placeholder='+380111111111'
               classes={classes}
             />
             <Input
-              label="Email:"
-              type="email"
-              name="email"
-              placeholder="your@mail.com"
+              label='Email:'
+              type='email'
+              name='email'
+              placeholder='your@mail.com'
               classes={classes}
             />
             <Input
-              label="Birthday:"
-              type="date"
-              name="birthday"
+              label='Birthday:'
+              type='date'
+              name='birthday'
               classes={classes}
             />
-            <button type="submit">Save</button>
+            <button type='submit'>Save</button>
           </Form>
         );
       }}

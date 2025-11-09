@@ -12,6 +12,7 @@
   "dependencies": {
     "classnames": "^2.5.1",
     "formik": "^2.4.6",
+    "prettier-standard": "^16.4.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.3",

@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class VeiwPortParams extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.state = {
@@ -12,14 +12,14 @@ class VeiwPortParams extends Component {
   resizeHandler = () => {
     this.setState({ x: window.innerWidth, y: window.innerHeight });
   };
-  componentDidMount() {
-    window.addEventListener("resize", this.resizeHandler);
+  componentDidMount () {
+    window.addEventListener('resize', this.resizeHandler);
   }
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.resizeHandler);
+  componentWillUnmount () {
+    window.removeEventListener('resize', this.resizeHandler);
   }
-  render() {
-    const {x, y} = this.state;
+  render () {
+    const { x, y } = this.state;
     return (
       <div>
         Width:{x} Height:{y}
