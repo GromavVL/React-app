@@ -1,13 +1,12 @@
 // import React, { useState } from "react";
 import Practice from './components/Practice';
-import UserInfoForm from './components/UserInfoForm';
-import ContactPage from './pages/ContactPage';
+import UserLoaderH from './components/UsersLoaderH';
 import './App.scss';
 
 function App () {
   return (
     <>
-      <ContactPage />
+      <UserLoaderH />
     </>
   );
 }
